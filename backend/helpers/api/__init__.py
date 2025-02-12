@@ -1,7 +1,7 @@
 from flask_restful import Api
 from flask import Blueprint
 
-from resoucers.cbo_ocupacao import Cbo_ocupacao
+from resoucers.cbo_ocupacao import Cbo_ocupacao, Cbo_ocupacao_solr
 
 
 blueprint = Blueprint('api', __name__)
@@ -9,3 +9,4 @@ blueprint = Blueprint('api', __name__)
 api = Api()
 
 api.add_resource(Cbo_ocupacao, "/cbo_ocupacao")
+api.add_resource(Cbo_ocupacao_solr, "/cbo_ocupacao_solr/<string:busca>")

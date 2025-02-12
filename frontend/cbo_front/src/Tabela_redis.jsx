@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "./api/requisicoes";
 
-export default function Tabela() {
+export default function Tabela_redis() {
   const [dados, setDados] = useState([]);
   const [pesquisa, setPesquisa] = useState("");
   const [paginaAtual, setPaginaAtual] = useState(1);
@@ -36,7 +36,7 @@ export default function Tabela() {
   );
 
   return (
-    <div className="max-w-3xl mx-auto p-4">
+    <div className="max-w-3xl mx-auto p-4">REDIS<br/>
       <input
         type="text"
         placeholder="Pesquisar título..."
