@@ -18,6 +18,11 @@ docker build -t cbo_solr -f Dockerfile.solr .
 docker run -d --name solr-container -p 8983:8983 cbo_solr
 echo "Solr iniciado."
 
+echo "Flask iniciando."
+docker build -t app-flask -f Dockerfile.flask .
+docker run -p 5000:5000 app-flask
+echo "Flask iniciado."
+
 # Criar o ambiente virtual
 echo "Criando ambiente virtual..."
 python3 -m venv venv

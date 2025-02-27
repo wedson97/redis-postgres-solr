@@ -1,0 +1,18 @@
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY ./backend/requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ./backend .
+
+EXPOSE 5000
+
+ENV DATABASE_URL=postgresql://postgres:123456@localhost:5433/cbo_ocupacao
+
+
+# Rodar o Gunicorn
+CMD ["gunicorn", "--workers", "4", "--bind", "0.0.0.0:5000", "app:app"]

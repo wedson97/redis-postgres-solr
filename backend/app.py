@@ -14,7 +14,7 @@ if(os.environ.get("DATABASE_URL")==None):
     
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:123456@localhost:5433/cbo_ocupacao"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:123456@host.docker.internal:5433/cbo_ocupacao"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app=app)

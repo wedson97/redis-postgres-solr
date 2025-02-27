@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "./api/requisicoes";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Tabela_redis() {
   const [dados, setDados] = useState([]);
